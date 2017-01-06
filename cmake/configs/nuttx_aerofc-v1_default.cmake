@@ -15,6 +15,7 @@ set(config_module_list
 	drivers/led
 	drivers/px4fmu
 	drivers/boards/aerofc-v1
+	drivers/aerofc_pwmout
 	drivers/tap_esc
 	drivers/mpu6500
 	drivers/ms5611

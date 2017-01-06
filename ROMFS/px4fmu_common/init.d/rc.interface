@@ -54,6 +54,11 @@ then
 		set OUTPUT_DEV /dev/tap_esc
 	fi
 
+	if [ $OUTPUT_MODE == aerofc_pwmout ]
+	then
+		set OUTPUT_DEV /dev/aerofc_pwmout
+	fi
+
 	if mixer load ${OUTPUT_DEV} ${MIXER_FILE}
 	then
 		echo "INFO  [init] Mixer: ${MIXER_FILE} on ${OUTPUT_DEV}"

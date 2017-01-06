@@ -387,7 +387,7 @@ then
 		set FMU_MODE gpio_serial
 	fi
 
-	if [ $OUTPUT_MODE == tap_esc ]
+	if [ $OUTPUT_MODE == tap_esc -o $OUTPUT_MODE == aerofc_pwmout ]
 	then
 		set FMU_MODE rcin
 	fi
