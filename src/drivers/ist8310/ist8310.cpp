@@ -930,7 +930,7 @@ IST8310::collect()
 
 	if (ret != OK) {
 		perf_count(_comms_errors);
-		DEVICE_DEBUG("data/status read error");
+		DEVICE_DEBUG("I2C read error");
 		goto out;
 	}
 
@@ -939,11 +939,30 @@ IST8310::collect()
 	report.y = (((int16_t)report_buffer.y[1]) << 8) | (int16_t)report_buffer.y[0];
 	report.z = (((int16_t)report_buffer.z[1]) << 8) | (int16_t)report_buffer.z[0];
 
+
+	/* FSR:
+	 *   x, y: +- 1600 µT
+	 *   z:    +- 2500 µT
+	 *
+	 * Internal ADC is 14 bits, so also reduce z to +- 2457.3 µT.
+	 * Check if value makes sense, and discard any outlier
+	 */
+	if (report.x > 5334 || report.x < -5334 ||
+	    report.y > 5334 || report.y < -5334 ||
+	    report.z > 8191 || report.z < -8191) {
+		perf_count(_comms_errors);
+		DEVICE_DEBUG("data/status read error");
+		goto out;
+	}
+
 	/* temperature measurement is not available on IST8310 */
 	new_report.temperature = 0;
 
 	/*
 	 * raw outputs
+	 *
+	 * Sensor doesn't follow right hand rule, swap x and y to make it obey
+	 * it.
 	 */
 	new_report.x_raw = report.y;
 	new_report.y_raw = report.x;
