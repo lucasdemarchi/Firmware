@@ -406,7 +406,7 @@ then
 	set DATAMAN_OPT ""
 	if ver hwcmp AEROFC_V1
 	then
-		set DATAMAN_OPT -i
+		set DATAMAN_OPT -r
 	fi
 	# waypoint storage
 	# REBOOTWORK this needs to start in parallel
