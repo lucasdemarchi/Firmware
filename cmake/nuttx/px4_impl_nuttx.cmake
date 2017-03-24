@@ -250,10 +250,6 @@ function(px4_nuttx_add_export)
 
 	set(nuttx_src ${PX4_BINARY_DIR}/${CONFIG}/NuttX)
 
-	# all patches
-	file(GLOB nuttx_patches ${PX4_SOURCE_DIR}/nuttx-patches/*.patch)
-	list(SORT nuttx_patches)
-
 	# copy
 	file(GLOB_RECURSE nuttx_all_files ${PX4_SOURCE_DIR}/NuttX/*)
 	file(RELATIVE_PATH nuttx_cp_src ${PX4_BINARY_DIR} ${PX4_SOURCE_DIR}/NuttX)
@@ -261,29 +257,11 @@ function(px4_nuttx_add_export)
 		COMMAND ${MKDIR} -p ${nuttx_src}
 		COMMAND rsync -a --delete --exclude=.git ${nuttx_cp_src}/ ${CONFIG}/NuttX/
 		COMMAND ${TOUCH} ${PX4_BINARY_DIR}/nuttx_copy_${CONFIG}.stamp
-		DEPENDS ${DEPENDS} ${nuttx_patches} ${nuttx_all_files}
+		DEPENDS ${DEPENDS} ${nuttx_all_files}
 		COMMENT "Copying NuttX for ${CONFIG} with ${config_nuttx_config}"
 		WORKING_DIRECTORY ${PX4_BINARY_DIR}
 		)
 	add_custom_target(nuttx_copy_${CONFIG} DEPENDS ${PX4_BINARY_DIR}/nuttx_copy_${CONFIG}.stamp)
-
-	# patch
-	add_custom_target(nuttx_patch_${CONFIG})
-	foreach(patch ${nuttx_patches})
-		get_filename_component(patch_file_name ${patch} NAME)
-		message(STATUS "${CONFIG} NuttX patch: nuttx-patches/${patch_file_name}")
-		string(REPLACE "/" "_" patch_name "nuttx_patch_${patch_file_name}-${CONFIG}")
-		set(patch_stamp ${nuttx_src}/${patch_name}.stamp)
-
-		add_custom_command(OUTPUT ${patch_stamp}
-			COMMAND ${PATCH} -d ${nuttx_src} -s -p1 -N < ${patch}
-			COMMAND ${TOUCH} ${patch_stamp}
-			DEPENDS ${DEPENDS} nuttx_copy_${CONFIG} ${patch}
-			COMMENT "Applying ${patch}")
-
-		add_custom_target(${patch_name} DEPENDS ${patch_stamp})
-		add_dependencies(nuttx_patch_${CONFIG} ${patch_name})
-	endforeach()
 
 	# Read defconfig to see if CONFIG_ARMV7M_STACKCHECK is yes
 	# note: CONFIG will be BOARD in the future evaluation of ${hw_stack_check_${CONFIG}
@@ -301,7 +279,7 @@ function(px4_nuttx_add_export)
 		COMMAND ${CP} -rp ${PX4_SOURCE_DIR}/nuttx-configs/*.mk ${nuttx_src}/nuttx/
 		COMMAND ${CP} -rp ${PX4_SOURCE_DIR}/nuttx-configs/${CONFIG} ${nuttx_src}/nuttx/configs
 		COMMAND cd ${nuttx_src}/nuttx/tools && ./configure.sh ${CONFIG}/${config_nuttx_config}
-		DEPENDS ${DEPENDS} nuttx_patch_${CONFIG} ${config_files}
+		DEPENDS ${DEPENDS} ${config_files} nuttx_copy_${CONFIG}.stamp
 		WORKING_DIRECTORY ${PX4_BINARY_DIR}
 		COMMENT "Configuring NuttX for ${CONFIG} with ${config_nuttx_config}")
 
