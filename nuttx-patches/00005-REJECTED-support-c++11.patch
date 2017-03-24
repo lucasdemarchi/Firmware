@@ -1,3 +1,6 @@
+From: David Sidrane <david_s5@nscdg.com>
+Subject: REJECTED: support c++11
+
 diff --git NuttX/nuttx/include/cxx/cwchar NuttX/nuttx/include/cxx/cwchar
 index 67716ab..a6c6cfe 100755
 --- NuttX/nuttx/include/cxx/cwchar

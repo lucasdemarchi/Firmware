@@ -1,3 +1,6 @@
+From: David Sidrane <david_s5@nscdg.com>
+Subject: BACKPORT: stm32 flash no HSI needed f4
+
 diff --git NuttX/nuttx/arch/arm/src/stm32/stm32_flash.c NuttX/nuttx/arch/arm/src/stm32/stm32_flash.c
 index 73f1419..9ac38a1 100644
 --- NuttX/nuttx/arch/arm/src/stm32/stm32_flash.c

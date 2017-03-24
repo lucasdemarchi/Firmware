@@ -1,3 +1,6 @@
+From: David Sidrane <david_s5@nscdg.com>
+Subject: BACKPORT: i2c hotfix
+
 diff --git NuttX/nuttx/arch/arm/src/stm32/stm32_i2c.c NuttX/nuttx/arch/arm/src/stm32/stm32_i2c.c
 index 631ba66..669e0db 100644
 --- NuttX/nuttx/arch/arm/src/stm32/stm32_i2c.c

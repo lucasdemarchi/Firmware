@@ -1,3 +1,6 @@
+From: David Sidrane <david_s5@nscdg.com>
+Subject: BACKPORT: stm32 serial break
+
 diff --git NuttX/nuttx/arch/arm/src/stm32/stm32_serial.c NuttX/nuttx/arch/arm/src/stm32/stm32_serial.c
 index 644c810..10919e8 100644
 --- NuttX/nuttx/arch/arm/src/stm32/stm32_serial.c

@@ -1,3 +1,6 @@
+From: David Sidrane <david_s5@nscdg.com>
+Subject: REJECTED: ctype fix shadow wanings
+
 diff --git NuttX/nuttx/include/ctype.h NuttX/nuttx/include/ctype.h
 index dcf918b..65706b7 100644
 --- NuttX/nuttx/include/ctype.h

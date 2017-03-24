@@ -1,3 +1,6 @@
+From: David Sidrane <david_s5@nscdg.com>
+Subject: REJECTED: add math.h
+
 diff -ruN NuttX/nuttx/arch/arm/include/math.h NuttX/nuttx/arch/arm/include/math.h
 --- NuttX/nuttx/arch/arm/include/math.h	1969-12-31 14:00:00.000000000 -1000
 +++ NuttX/nuttx/arch/arm/include/math.h	2014-12-25 17:33:53.404950574 -1000

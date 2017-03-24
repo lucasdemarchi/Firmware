@@ -1,3 +1,6 @@
+From: David Sidrane <david_s5@nscdg.com>
+Subject: BACKPORT: stm32f3x add BKP
+
 diff --git NuttX/nuttx/arch/arm/src/stm32/chip/stm32f30xxx_memorymap.h NuttX/nuttx/arch/arm/src/stm32/chip/stm32f30xxx_memorymap.h
 index 51cca40..a7cbc46 100644
 --- NuttX/nuttx/arch/arm/src/stm32/chip/stm32f30xxx_memorymap.h

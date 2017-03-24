@@ -1,3 +1,6 @@
+From: David Sidrane <david_s5@nscdg.com>
+Subject: PENDING: workarround for flash data cache corruption
+
 diff --git NuttX/nuttx/arch/arm/src/stm32/Kconfig NuttX/nuttx/arch/arm/src/stm32/Kconfig
 index b6c0458649..d9fb0aeaa2 100644
 --- NuttX/nuttx/arch/arm/src/stm32/Kconfig

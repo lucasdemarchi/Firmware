@@ -1,3 +1,6 @@
+From: David Sidrane <david_s5@nscdg.com>
+Subject: REJECTED: add var expansion in nsh parse
+
 diff --git NuttX/apps/nshlib/nsh_parse.c NuttX/apps/nshlib/nsh_parse.c
 index 30f7ef5..f6fa2e0 100644
 --- NuttX/apps/nshlib/nsh_parse.c

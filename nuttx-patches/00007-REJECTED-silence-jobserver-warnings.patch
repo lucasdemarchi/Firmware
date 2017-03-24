@@ -1,3 +1,6 @@
+From: David Sidrane <david_s5@nscdg.com>
+Subject: REJECTED: silence jobserver warnings
+
 diff --git NuttX/apps/Makefile NuttX/apps/Makefile
 index 4093b0e..3bdc36a 100644
 --- NuttX/apps/Makefile

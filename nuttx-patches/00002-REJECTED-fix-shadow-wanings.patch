@@ -1,3 +1,6 @@
+From: David Sidrane <david_s5@nscdg.com>
+Subject: REJECTED: fix shadow wanings
+
 diff --git NuttX/nuttx/include/signal.h NuttX/nuttx/include/signal.h
 index bd8ee9f..7ee242a 100644
 --- NuttX/nuttx/include/signal.h

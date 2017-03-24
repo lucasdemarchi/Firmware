@@ -1,3 +1,6 @@
+From: David Sidrane <david_s5@nscdg.com>
+Subject: BACKPORT: priority restoration fix
+
 diff --git NuttX/nuttx/include/semaphore.h NuttX/nuttx/include/semaphore.h
 index 8821b12..0056909 100644
 --- NuttX/nuttx/include/semaphore.h

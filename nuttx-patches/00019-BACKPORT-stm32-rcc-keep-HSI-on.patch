@@ -1,3 +1,6 @@
+From: David Sidrane <david_s5@nscdg.com>
+Subject: BACKPORT: stm32 rcc keep HSI on
+
 diff --git NuttX/nuttx/arch/arm/src/stm32/stm32f40xxx_rcc.c NuttX/nuttx/arch/arm/src/stm32/stm32f40xxx_rcc.c
 index 5e2ba73..adda863 100644
 --- NuttX/nuttx/arch/arm/src/stm32/stm32f40xxx_rcc.c

@@ -1,3 +1,6 @@
+From: David Sidrane <david_s5@nscdg.com>
+Subject: BACKPORT: stm32 bkp reference fix
+
 diff --git NuttX/nuttx/arch/arm/src/stm32/stm32_pwr.c NuttX/nuttx/arch/arm/src/stm32/stm32_pwr.c
 index 13fbdb3..b2aee60 100644
 --- NuttX/nuttx/arch/arm/src/stm32/stm32_pwr.c

@@ -1,3 +1,6 @@
+From: David Sidrane <david_s5@nscdg.com>
+Subject: BACKPORT: stm32f7 bkp reference fix
+
 diff --git NuttX/nuttx/arch/arm/src/stm32f7/stm32_bbsram.c NuttX/nuttx/arch/arm/src/stm32f7/stm32_bbsram.c
 index bd653cf..71adbcf 100644
 --- NuttX/nuttx/arch/arm/src/stm32f7/stm32_bbsram.c

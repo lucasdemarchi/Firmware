@@ -1,3 +1,6 @@
+From: David Sidrane <david_s5@nscdg.com>
+Subject: REJECTED: avoid export copy with export insitu
+
 diff --git NuttX/nuttx/tools/mkexport.sh NuttX/nuttx/tools/mkexport.sh
 index 348a14c..3cc9182 100755
 --- NuttX/nuttx/tools/mkexport.sh

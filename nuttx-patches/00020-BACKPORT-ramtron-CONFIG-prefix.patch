@@ -1,3 +1,6 @@
+From: David Sidrane <david_s5@nscdg.com>
+Subject: BACKPORT: ramtron CONFIG prefix
+
 diff --git NuttX/nuttx/drivers/mtd/ramtron.c NuttX/nuttx/drivers/mtd/ramtron.c
 index ad448c8..236084f 100644
 --- NuttX/nuttx/drivers/mtd/ramtron.c

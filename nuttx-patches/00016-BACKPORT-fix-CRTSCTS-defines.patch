@@ -1,3 +1,6 @@
+From: David Sidrane <david_s5@nscdg.com>
+Subject: BACKPORT: fix CRTSCTS defines
+
 diff -ruN NuttX/nuttx/include/termios.h NuttX/nuttx/include/termios.h
 --- NuttX/nuttx/include/termios.h	1969-12-31 14:00:00.000000000 -1000
 +++ NuttX/nuttx/include/termios.h	2014-12-25 17:33:53.404950574 -1000

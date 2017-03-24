@@ -1,3 +1,6 @@
+From: David Sidrane <david_s5@nscdg.com>
+Subject: BACKPORT: cdcacm
+
 diff --git NuttX/nuttx/drivers/usbdev/cdcacm.c NuttX/nuttx/drivers/usbdev/cdcacm.c
 index 64e2e68..15f92dd 100644
 --- NuttX/nuttx/drivers/usbdev/cdcacm.c
